@@ -1,0 +1,144 @@
+/* ===== VARIABLES DE COLOR (se usan en todo el archivo) ===== */
+:root {
+    --fondo: #f3ebe0;          /* fondo de la página */
+    --tarjeta: #ffffff;        /* fondo de las tarjetas */
+    --texto: #2b2119;          /* color principal del texto */
+    --texto-suave: #75675a;    /* textos secundarios */
+    --borde: #e0d2c1;          /* color de los bordes */
+    --madera: #6b3e1f;         /* marrón madera: títulos y botones */
+    --punto: #c47f17;          /* ámbar: puntos de los dedos */
+    --ok: #2e7d4f;             /* verde: acorde dominado */
+}
+/* ===== REINICIO BÁSICO ===== */
+* {
+    box-sizing: border-box;    /* el padding no agranda los elementos */
+    margin: 0;
+    padding: 0;
+}
+/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+    padding: 24px 16px;
+}  
+/* Contenedor central con ancho máximo */
+.app {
+    max-width: 960px;
+    margin: 0 auto;
+}
+/* ===== ENCABEZADO ===== */
+.encabezado {
+    margin-bottom: 20px;
+}
+.encabezado h1 {
+    font-size: 2.1rem;
+    color: var(--madera);
+}
+.encabezado p {
+    color: var(--texto-suave);
+}
+.resumen {
+    margin-top: 4px;
+    font-weight: bold;
+}
+/* ===== TARJETAS ===== */
+.tarjetas {
+    display: grid;
+    /* columnas automáticas: se acomodan según el ancho disponible */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}  
+.tarjeta {
+    background: var(--tarjeta);
+    border: 2px solid var(--borde);
+    border-radius: 12px;
+    padding: 18px;
+}
+/* Acorde dominado (clase agregada con JavaScript) */
+.tarjeta.dominado {
+    border-color: var(--ok);
+}
+.tarjeta h2 {
+    font-size: 1.25rem;
+}
+/* Nombre en cifrado americano (C, D, Em...) */
+.cifrado {
+    font-size: 0.9rem;
+    color: var(--punto);
+    border: 1px solid var(--punto);
+    border-radius: 10px;
+    padding: 0 8px;
+    vertical-align: middle;
+}
+.notas {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+/* ===== DIAGRAMA DEL ACORDE (dibujado por JavaScript) ===== */
+.diagrama svg {
+    display: block;
+    width: 150px;
+    margin: 8px auto;
+}
+.cuerda,
+.traste {
+    stroke: var(--texto-suave);
+    stroke-width: 1.5;
+}
+.cejuela { fill: var(--madera); }
+.punto { fill: var(--punto); }
+.abierta { fill: none; stroke: var(--texto); stroke-width: 1.5; }
+.marca { fill: var(--texto); font-size: 12px; text-anchor: middle; }
+/* ===== BOTONES Y CASILLA ===== */
+.acciones {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0;
+}
+.btn {
+    flex: 1;
+    padding: 8px 6px;
+    background: none;
+    color: var(--madera);
+    border: 2px solid var(--madera);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.btn:hover {
+    background: var(--madera);
+    color: #fff;
+}
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+/* ===== NOTAS PERSONALES ===== */
+.panel {
+    background: var(--tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 20px;
+}
+.panel h2 {
+    font-size: 1.1rem;
+    color: var(--madera);
+    margin-bottom: 10px;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+}
+textarea:focus {
+    outline: 2px solid var(--madera);
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acordes musicales</title>
+    <link rel="stylesheet" href="acordes_musicales.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="acordes_musicales.js" defer></script>
+</head>
+<body>
+    <!-------------------------------------->
+    <!--|estructuracion_acordes_musicales|-->
+    <!-------------------------------------->
+    <main class="app">
+        <!-- ENCABEZADO: título, descripción y progreso -->
+        <header class="encabezado">
+            <h1>Acordes Musicales</h1>
+            <p>Cinco acordes básicos de guitarra. Los puntos muestran dónde poner los dedos.</p>
+            <!-- JavaScript escribe cuántos acordes dominas -->
+            <p id="resumen" class="resumen"></p>
+        </header>
+        <!-- TARJETAS: data-id conecta cada acorde con sus datos en JavaScript -->
+        <section class="tarjetas">
+            <article class="tarjeta" data-id="do">
+                <h2>Do mayor <span class="cifrado">C</span></h2>
+                <!-- JavaScript dibuja el diagrama del acorde dentro de este div -->
+                <div class="diagrama"></div>
+                <p class="notas">Notas: Do, Mi, Sol</p>
+                <div class="acciones">
+                    <button class="btn" data-sonar type="button">▶ Escuchar</button>
+                    <button class="btn" data-practica type="button">Practiqué (<span class="veces">0</span>)</button>
+                </div>
+                <label class="check"><input type="checkbox" data-dominado> Ya lo domino</label>
+            </article>
+            <article class="tarjeta" data-id="re">
+                <h2>Re mayor <span class="cifrado">D</span></h2>
+                <div class="diagrama"></div>
+                <p class="notas">Notas: Re, Fa♯, La</p>
+                <div class="acciones">
+                    <button class="btn" data-sonar type="button">▶ Escuchar</button>
+                    <button class="btn" data-practica type="button">Practiqué (<span class="veces">0</span>)</button>
+                </div>
+                <label class="check"><input type="checkbox" data-dominado> Ya lo domino</label>
+            </article>
+            <article class="tarjeta" data-id="mim">
+                <h2>Mi menor <span class="cifrado">Em</span></h2>
+                <div class="diagrama"></div>
+                <p class="notas">Notas: Mi, Sol, Si</p>
+                <div class="acciones">
+                    <button class="btn" data-sonar type="button">▶ Escuchar</button>
+                    <button class="btn" data-practica type="button">Practiqué (<span class="veces">0</span>)</button>
+                </div>
+                <label class="check"><input type="checkbox" data-dominado> Ya lo domino</label>
+            </article>
+            <article class="tarjeta" data-id="sol">
+                <h2>Sol mayor <span class="cifrado">G</span></h2>
+                <div class="diagrama"></div>
+                <p class="notas">Notas: Sol, Si, Re</p>
+                <div class="acciones">
+                    <button class="btn" data-sonar type="button">▶ Escuchar</button>
+                    <button class="btn" data-practica type="button">Practiqué (<span class="veces">0</span>)</button>
+                </div>
+                <label class="check"><input type="checkbox" data-dominado> Ya lo domino</label>
+            </article>
+            <article class="tarjeta" data-id="lam">
+                <h2>La menor <span class="cifrado">Am</span></h2>
+                <div class="diagrama"></div>
+                <p class="notas">Notas: La, Do, Mi</p>
+                <div class="acciones">
+                    <button class="btn" data-sonar type="button">▶ Escuchar</button>
+                    <button class="btn" data-practica type="button">Practiqué (<span class="veces">0</span>)</button>
+                </div>
+                <label class="check"><input type="checkbox" data-dominado> Ya lo domino</label>
+            </article>
+        </section>
+        <!-- NOTAS PERSONALES: se guardan mientras se escribe -->
+        <section class="panel">
+            <h2>Mis notas de práctica</h2>
+            <textarea id="nota" rows="3" placeholder="Ej: Me cuesta cambiar de Sol a Do..."></textarea>
+        </section>
+    </main>
+</body>
+</html>
