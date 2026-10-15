@@ -1,34 +1,32 @@
-/* ===== VARIABLES DE COLOR (se usan en todo el archivo) ===== */
-:root {
-    --fondo: #f3ebe0;          /* fondo de la página */
-    --tarjeta: #ffffff;        /* fondo de las tarjetas */
-    --texto: #2b2119;          /* color principal del texto */
-    --texto-suave: #75675a;    /* textos secundarios */
-    --borde: #e0d2c1;          /* color de los bordes */
-    --madera: #6b3e1f;         /* marrón madera: títulos y botones */
-    --punto: #c47f17;          /* ámbar: puntos de los dedos */
-    --ok: #2e7d4f;             /* verde: acorde dominado */
-}
-/* ===== REINICIO BÁSICO ===== */
 * {
-    box-sizing: border-box;    /* el padding no agranda los elementos */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+:root {
+    --fondo: #f3ebe0;
+    --tarjeta: #ffffff;
+    --texto: #2b2119;
+    --texto-suave: #75675a;
+    --borde: #e0d2c1;
+    --madera: #6b3e1f;
+    --punto: #c47f17;
+    --ok: #2e7d4f;
+}
 body {
     font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     background: var(--fondo);
     color: var(--texto);
     line-height: 1.5;
     padding: 24px 16px;
-}  
-/* Contenedor central con ancho máximo */
+}
+/*------------------------------*/
+/*--|estilo_acordes_musicales|--*/
+/*------------------------------*/
 .app {
     max-width: 960px;
     margin: 0 auto;
 }
-/* ===== ENCABEZADO ===== */
 .encabezado {
     margin-bottom: 20px;
 }
@@ -43,28 +41,27 @@ body {
     margin-top: 4px;
     font-weight: bold;
 }
-/* ===== TARJETAS ===== */
+/*---------------------*/
+/*--|estilo_tarjetas|--*/
+/*---------------------*/
 .tarjetas {
     display: grid;
-    /* columnas automáticas: se acomodan según el ancho disponible */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 16px;
     margin-bottom: 20px;
-}  
+}
 .tarjeta {
     background: var(--tarjeta);
     border: 2px solid var(--borde);
     border-radius: 12px;
     padding: 18px;
 }
-/* Acorde dominado (clase agregada con JavaScript) */
 .tarjeta.dominado {
     border-color: var(--ok);
 }
 .tarjeta h2 {
     font-size: 1.25rem;
 }
-/* Nombre en cifrado americano (C, D, Em...) */
 .cifrado {
     font-size: 0.9rem;
     color: var(--punto);
@@ -77,7 +74,9 @@ body {
     color: var(--texto-suave);
     font-size: 0.9rem;
 }
-/* ===== DIAGRAMA DEL ACORDE (dibujado por JavaScript) ===== */
+/*---------------------*/
+/*--|estilo_diagrama|--*/
+/*---------------------*/
 .diagrama svg {
     display: block;
     width: 150px;
@@ -88,11 +87,25 @@ body {
     stroke: var(--texto-suave);
     stroke-width: 1.5;
 }
-.cejuela { fill: var(--madera); }
-.punto { fill: var(--punto); }
-.abierta { fill: none; stroke: var(--texto); stroke-width: 1.5; }
-.marca { fill: var(--texto); font-size: 12px; text-anchor: middle; }
-/* ===== BOTONES Y CASILLA ===== */
+.cejuela {
+    fill: var(--madera);
+}
+.punto {
+    fill: var(--punto);
+}
+.abierta {
+    fill: none;
+    stroke: var(--texto);
+    stroke-width: 1.5;
+}
+.marca {
+    fill: var(--texto);
+    font-size: 12px;
+    text-anchor: middle;
+}
+/*--------------------*/
+/*--|estilo_botones|--*/
+/*--------------------*/
 .acciones {
     display: flex;
     gap: 8px;
@@ -118,7 +131,9 @@ body {
     gap: 8px;
     cursor: pointer;
 }
-/* ===== NOTAS PERSONALES ===== */
+/*------------------*/
+/*--|estilo_notas|--*/
+/*------------------*/
 .panel {
     background: var(--tarjeta);
     border: 1px solid var(--borde);
